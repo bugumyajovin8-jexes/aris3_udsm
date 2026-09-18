@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/student/student_profile/2025-04-00850/user/profile", "destination": "/index.html" },
+    { "source": "/student/student_profile/2025-04-00850/user/assets/:path*", "destination": "/assets/:path*" },
+    { "source": "/results/student/student_profile/2025-04-00850/user/profile", "destination": "/courses.html" },
+    { "source": "/results/student/student_profile/2025-04-00850/user/assets/:path*", "destination": "/assets/:path*" }
+  ]
+}

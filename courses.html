@@ -1,0 +1,3137 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-param" content="_csrf-frontend">
+<meta name="csrf-token" content="">
+        <title>My Course Results</title>
+        <link href="assets/css/bootstrap_002.css" rel="stylesheet">
+<link href="assets/css/google_fonts.css" rel="stylesheet">
+<link href="assets/css/styles.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/core.css" rel="stylesheet">
+<link href="assets/css/components.css" rel="stylesheet">
+<link href="assets/css/colors.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/animate.min.css" rel="stylesheet">        <script src="assets/js/jquery.min.js"></script>    </head>
+    <body class="pace-done sidebar-xs-indicator"><div class="pace  pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        
+        <div class="wrap">
+
+            
+
+<style>
+    .ui-pnotify {
+        width: 400px !important;
+    }
+</style>
+    <script>
+        $(document).ready(function () {
+            // Session timeout
+            document.querySelector('body').onload = () => {
+                false && $.sessionTimeout({
+                    heading: 'h5',
+                    title: 'Session Timeout!',
+                    message: 'Your session is about to expire. Do you want to stay connected and extend your session?',
+                    ignoreUserActivity: false,
+                    warnAfter: 1200000,
+                    redirAfter: 1800000,
+                    // keepAliveUrl: '/',
+                    keepAliveUrl: '/index.php?r=student%2Fmy-result%2Findex',
+                    csrf: '',
+                    keepAlive: true,
+                    keepAliveInterval: 1800000,
+                    redirUrl: '#',
+                    logoutUrl: '#',
+                    keepBtnClass: 'btn btn-success',
+                    keepBtnText: 'Extend session',
+                    logoutBtnClass: 'btn btn-danger',
+                    logoutBtnText: 'Log me out',
+
+                });
+
+            };
+        });
+    </script>
+
+    
+
+
+
+
+
+
+    <script type="text/javascript" src="assets/js/fab.min.js"></script>
+<!-- Main navbar -->
+<div id="theme_topBar" class="navbar navbar-default header-highlight bg-header-highlight bg--300">
+    <div id="theme_logoBar" class="navbar-header bg-blue-600" style="text-align: center;">
+        <!--<a class="navbar-brand text-white text-bold text-center" href="../staff"><img src="assets/img/logo.light.png"  alt="<? /*= Yii::$app->name; */ ?>" /></a>-->
+        <img src="assets/img/logo.png" alt="ARIS 3.0" height="46px">
+        <ul class="nav navbar-nav visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav">
+            <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
+            </li>
+            
+                
+
+                    <p class="navbar-text"><span class="label bg-success">Online</span></p>
+
+
+                                                        <p class="navbar-text"><span class="label bg-success"><i class="icon-checkmark4"></i> DSM ON</span></p>
+            
+        </ul>
+
+        <p class="navbar-text text-size-large text-bold" style="font-size: large;">
+            <span class="text-thin">Current Academic Year</span>
+            : 2025/26        </p>
+
+        <ul class="nav navbar-nav navbar-right">
+
+            
+
+            <li class="dropdown" id="systemNotifications">
+                
+
+
+
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="icon-bell3 text-muted"></i>
+        <span class="visible-xs-inline-block position-right">Notifications</span>
+        <!--span class="badge bg-warning-400"></span-->
+
+        
+    </a>
+
+    <div class="dropdown-menu dropdown-content width-350">
+        <div class="dropdown-content-heading">
+            Notifications
+            <ul class="icons-list" hidden="">
+                <li><a href="#"><i class="icon-compose"></i></a></li>
+            </ul>
+        </div>
+
+        <ul class="media-list dropdown-content-body">
+
+            <li class="text-muted"> <i class="icon-history"></i> No new Notifications...</li><hr>            
+        </ul>
+
+        <div class="dropdown-content-footer" hidden="">
+            <a href="#" data-popup="tooltip" title="" data-original-title="All messages"><i class="icon-menu display-block"></i></a>
+        </div>
+    </div>
+
+
+            </li>
+
+
+            <li class="dropdown dropdown-user">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/img/avatar.jpg" width="30px" height="30px" alt="">
+                    <span>2025-04-00850</span>
+                    <i class="caret"></i>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="#"><i class="icon-user-plus"></i> My
+                                profile</a></li>
+                        <!-- <li><a href="<? /*= SecurityModule::AutoUrl('balance'); */ ?>"><i class="icon-coins"></i> My
+                                balance</a></li>
+                        <li><a href="<? /*= SecurityModule::AutoUrl('message'); */ ?>"><span
+                                        class="badge bg-teal-400 pull-right">58</span> <i
+                                        class="icon-comment-discussion"></i> Messages</a></li>
+                        <li class="divider"></li>-->
+
+                        
+                        <li><a href="#"><i class="icon-switch2"></i>
+                                Logout(2025-04-00850)</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /main navbar -->
+<script>
+    $(document).ready(function () {
+        // Block page
+        $('.block-page').on('click', function () {
+            var message = '<i class="icon-spinner4 icon-3x spinner"></i> <span class="text-semibold display-block">Please wait</span>';
+            $.blockUI({
+                //message: '<i class="icon-spinner4 spinner"></i>',
+                message: message,
+                // timeout: 1000*60, //unblock after 1 minute
+                timeout: 10000, //unblock after 1 minute
+                // timeout: 1000*60*10, //unblock after 10 Minutes
+                overlayCSS: {
+                    backgroundColor: '#1b2024',
+                    opacity: 0.8,
+                    zIndex: 1200,
+                    cursor: 'wait'
+                },
+                css: {
+                    border: 0,
+                    color: '#fff',
+                    padding: 0,
+                    zIndex: 1201,
+                    backgroundColor: 'transparent'
+                },
+                onBlock: function () {
+                    clearTimeout();
+                }
+            });
+
+
+        });
+
+        $('.sidebar-main-toggle').click(() => {
+            updateSystemLogo();
+        });
+        //document.querySelector('body').onload = () => {
+        updateSystemLogo();
+
+        //};
+    });
+
+    function updateSystemLogo() {
+        const prefix = `..`;
+        const mainSideBar = document.getElementById('theme_logoBar');
+        if (mainSideBar != undefined && mainSideBar.hasChildNodes()) {
+            const systemLogo = mainSideBar.children[0];
+            if (systemLogo != undefined) {
+                if ($('body').hasClass('sidebar-xs')) {
+                    systemLogo.src = `assets/img/logo.light.png`;
+                } else {
+                    systemLogo.src = `assets/img/logo.png`;
+                }
+            }
+        }
+    }
+
+    function loadSystemLogo() {
+        const prefix = `..`;
+        const mainSideBar = document.getElementById('theme_logoBar');
+        if (mainSideBar != undefined && mainSideBar.hasChildNodes()) {
+            const systemLogo = mainSideBar.children[0];
+            if (systemLogo != undefined) {
+                if ($('body').hasClass('sidebar-xs')) {
+                    systemLogo.src = `assets/img/logo.png`;
+                } else {
+                    systemLogo.src = `assets/img/logo.light.png`;
+                }
+            }
+        }
+    }
+</script>
+
+            <!-- Page container -->
+            <div class="page-container" style="min-height:476.6667px">
+
+                <!-- Page content -->
+                <div class="page-content">
+                                                            
+
+<!-- Main sidebar -->
+<div id="theme_sideBar" class="sidebar sidebar-main bg-blue-800">
+    <div class="sidebar-content">
+
+        <!-- Company menu -->
+        
+
+<div class="sidebar-user">
+    <div class="category-content">
+        <div class="media">
+
+            <div class="media-body">
+                <div class="text-center">
+                    <a href="https://www.udsm.ac.tz" class="media-center" target="_blank">
+                        <img src="assets/img/logo.png" class="img-circle" width="100px" alt="">
+                    </a>
+
+                </div>
+                <span class="media-heading text-size-mini text-thin text-center text-semibold text-uppercase">University of Dar es Salaam</span>
+                <div class="text-size-mini text-muted text-center">
+                    <i class="icon-pin text-size-small"></i> UDSM                </div>
+            </div>
+
+            <div class="media-right media-middle">
+                <ul class="icons-list">
+                    <li>
+                        <a href="#"><i class="icon-cog3"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>        <!-- /Company menu -->
+
+
+        <!-- Main navigation -->
+        <div class="sidebar-category sidebar-category-visible">
+            <div class="category-content no-padding">
+                <ul class="navigation navigation-main navigation-accordion">
+
+
+                    <li style="display: block;" class=""><a href="index.html"><i class="icon-user"></i> <span>Dashboard</span></a></li>
+
+
+                    <li>
+                        <a href="#" class="has-ul"><i class="icon-profile"></i> <span>My Profile</span></a>
+                        <ul class="hidden-ul">
+                            <li style="" class=""><a href="#" id=""> Profile Details</a></li>
+                        </ul>
+                    </li>
+
+                    <!--Depreciated-->
+                    <li hidden="">
+                        <a href="#" class="has-ul"><i class="icon-profile"></i> <span>My Profile</span></a>
+                        <ul class="hidden-ul">
+                            <li style="" class=""><a href="#" id=""><span class="icon-eye"></span> Profile Preview</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-pencil"></span> Edit Profile</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-calendar22"></span> My Tasks</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-key"></span> Change Password</a></li>
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="#" class="has-ul"><i class="icon-plus22"></i> <span>Registration</span></a>
+                        <ul class="hidden-ul">
+                            <li style="" class=""><a href="#" id=""> My Semester/Year Registration</a></li>
+                            <li style="display: block;" class=""><a href="#" id=""> My Course Registration</a></li>
+                            <li style="display: block;" class=""><a href="#" id=""> My Identity Card</a></li>
+
+                                                            <li style="" class=""><a href="#" id=""> My Programme Transfer</a></li>
+                            
+                        </ul>
+                    </li>
+
+
+                    <li class="active">
+                        <a href="#" class="has-ul"><i class="icon-book"></i> <span>Academics</span></a>
+                        <ul>
+
+                            <li style="display: block;" class="active"><a href="courses.html" id=""> My Courses &amp; Results</a></li>
+                                                                                        <li style="display: block;" class=""><a href="#" id=""> My Postponement of Examinations</a></li>
+                            
+
+                            <li style="display: none;" class=""><a href="#" id=""> My Postponement of Studies</a></li>
+
+
+                                                                                                <li style="display: block;" class="">
+                                        <a href="#" id=""><span class=""></span>My Statement of Results</a></li>
+                                                                                                                            
+                            <li style="display: block;" class="">
+                                <a href="#">
+                                    My Appeals
+                                </a>
+                            </li>
+
+
+                            <li style="display: block;" class=""><a href="#" id=""><i class="icon-reading"></i> My CA</a></li>
+
+                            <li style="display: block;" class=""><a href="#" id=""> My Teaching Practice (TP)</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li style="display: none">
+                        <a href="#" class="has-ul"><i class="icon-graduation"></i> <span>Graduation</span></a>
+                        <!--Graduation-->
+                        <ul class="hidden-ul">
+                                                            <li style="display: block;" class="">
+                                    <a href="#" id=""><span class=""></span>My Graduation Requirements </a></li>
+                                <li style="display: block;" class="">
+                                    <a href="#" id=""><span class=""></span>My Attendance Confirmation </a></li>
+                                                    </ul>
+                        <!--End Graduation-->
+                    </li>
+                    <li>
+                        <a href="#" class="has-ul"><i class="icon-cash3"></i> <span>Payments</span></a>
+                        <ul class="hidden-ul">
+
+                            <li style="" class=""><a href="#" id=""><span class="icon-cash4"></span> My Bills</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-credit-card2"></span> Make Payment</a></li>
+
+
+                            <li style="" class=""><a href="#" id=""><span class="icon-wallet"></span> My Payments</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-reply-all"></span> Apply for Refund</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-strategy"></span> Payment Transfers</a></li>
+
+                            <li style="display: block;" class=""><a href="#" id=""><span class="icon-medal"></span> My Sponsorship</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#" class="has-ul"><i class="icon-home9"></i> <span>Accommodation</span></a>
+                        <ul class="hidden-ul">
+                                                            
+                                                                    <li style="" class=""><a href="#" id=""><span class="icon-quill2"></span> Application </a>
+                                                                </li>
+
+                                
+                            
+                            <li style="" class=""><a href="#" id=""><span class="icon-bed2"></span> My Bed</a></li>
+
+                            <li style="" class=""><a href="#" id=""><span class="icon-tab"></span> Bed Swapping</a></li>
+
+                            <li style="" class=""><a href="#" id=""><span class="icon-clipboard2"></span> Clearance</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-bubble-notification"></span> Report an Incident</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="has-ul"><i class="icon-mouse"></i> <span>MISC</span></a>
+                        <ul class="hidden-ul">
+                            <li style="" class=""><a href="#" id=""><span class="icon-box-add"></span> Vote</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="has-ul"><i class="icon-chart"></i> <span>Reports</span></a>
+                        <ul class="hidden-ul">
+                            <li style="" class=""><a href="#" id=""><span class="icon-stats-bars4"></span> Progressive</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-pie-chart"></span> Payments</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-profile"></span> Profile</a></li>
+                            <li style="" class=""><a href="#" id=""><span class="icon-gear"></span> MISC</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /main navigation -->
+    </div>
+</div>
+<!-- /main sidebar -->
+                    <!-- Main content -->
+                    <div class="content-wrapper">
+
+                        <!-- Content area -->
+                        <!--<div class="content">-->
+                        <div class="page-header-default">
+                            <div class="breadcrumb-line breadcrumb-line-component"><a class="breadcrumb-elements-toggle"><i class="icon-menu-open"></i></a>
+
+                                <ul class="breadcrumb"><li><a href="#">Home</a></li>
+<li class="active">Academics</li>
+<li class="active">My Course Results</li>
+</ul>
+                                                                
+<ul class="breadcrumb-elements">
+    <li style="display: none"><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
+
+    
+</ul>
+
+                            </div>
+                        </div>
+
+
+                        <div class="content">
+
+                            <!--?/*= Alert::widget(); */?-->
+
+                                                        
+<script>
+    function playSound() {
+        const audio = document.createElement('audio');
+        document.body.append(audio);
+        audio.src = ``;
+        document.body.onfocus = () => {
+            audio.play();
+        }
+    }
+    function readNotification(notificationId) {
+        $.ajax({
+            url: `/index.php?r=notification%2Fread&id=${notificationId}`,
+            success: (response) => {
+                console.log(response);
+            }
+        });
+    }
+</script>
+
+<script>
+    function syncNotifications() {
+        setInterval(() => {
+            $.ajax({
+                url: `/index.php?r=notification%2Fsync`,
+                success: (response) => {
+                    const responseBundle = JSON.parse(response);
+                    if (responseBundle.type == 1) {
+                        const notifications = responseBundle.notifications;
+                        $('#systemNotifications').html(notifications);
+                        playSound();
+                    }
+                },
+                error: (error) => {
+                    //TODO: Error handling
+                }
+            });
+        }, 1000);
+    }
+</script>
+
+
+
+                            
+<div class="panel">
+    <div class="panel-heading">
+        <h5 class="panel-title text-muted text-semibold">Results for the Registered Courses<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
+        <div class="heading-elements">
+            <ul class="icons-list" hidden="">
+                <li><a data-action="collapse"></a></li>
+                <li><a data-action="reload"></a></li>
+                <li><a data-action="close"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel-body">
+        <!-- h4 class="text-teal text-center text-italic">
+            <i class="icon-history"></i> Could not load course results by the moment... check again Later
+        </h4-->
+        
+<ul class="nav nav-tabs nav-tabs-highlight nav-justified">
+                                <li class="active">
+                                    <a href="#year_6677986" class="text-bold" data-toggle="tab"><small class="text-success"><i class="icon-circle2" style="font-size: 0.7em"></i></small> First Year Results <span style="color: #999999; font-style: normal">2025/26</span></a>
+                            </li>
+            </ul>
+<div class="tab-content">
+                    <div class="tab-pane active" id="year_6677986">
+                            
+
+<style>
+    /* The toast - position it at the bottom and in the middle of the screen */
+    #toast {
+        visibility: hidden; /* Hidden by default. Visible on click */
+        min-width: 250px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 2px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 10000000; /* Add a z-index if needed */
+        left: 50%; /* Center the toast */
+        bottom:150px; /* 30px from the bottom */
+    }
+
+    /* Show the toast when clicking on a button (class added with JavaScript) */
+    #toast.show {
+        visibility: visible; /* Show the toast */
+        /* Add animation: Take 0.5 seconds to fade in and out the toast.
+        However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    /* Animations to fade the toast in and out */
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom:150px; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom:150px; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {bottom:150px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {bottom:150px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+</style>
+<div id="toast">Loading message..</div>
+<script>
+    function showToast(message,time = 3000) {
+
+        // Get the toast DIV
+        let toast = document.getElementById("toast");
+        toast.innerHTML = message;
+
+        // Add the "show" class to DIV
+        toast.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function () {
+            toast.className = toast.className.replace("show", "");
+        }, time);
+    }
+</script>
+
+<style>
+    .requirements-summary {
+        list-style: none;
+    }
+
+    .requirements-summary li {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .semester-results-summary {
+        /**display: none;**/
+    }
+
+    .results-empty {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+</style>
+
+<div class="table-responsive">
+
+
+                    
+        <div class="year-results-summary">
+            <label class="text-semibold text-teal"><i class="icon-notebook"></i> Year Results Summary </label>
+            <hr>
+                            <div class="text-info text-center" style="font-size: 2rem; display: none">
+                    <b>Announcement:</b>
+                    Please be informed that the examination results for academic year 2021/22 will be published tomorrow
+                    Thursday 1 September 2022.
+                </div>
+                <div class="text-orange text-size-large text-center mt-20" style="display: none">
+                    <i class="icon-alert"></i> These results are Provisional, they may change
+                </div>
+            
+                                        <p>
+                    Total Credits:
+                    <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em">
+                    152.00                </span>
+                    &nbsp;|&nbsp;
+                    Total Grade Points:
+                    <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em">
+                    -                </span>
+                    &nbsp;|&nbsp;
+                    GPA: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em">
+                    -                </span>
+                    |
+                    Status: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em"> Incomplete and Carryover</span>
+                    &nbsp;|&nbsp;
+                    Remarks: Inc(10), Carry(5)
+                </p>
+                        <hr>
+        </div>
+
+        <ol style="list-style: none">
+                            <!-- Course Evaluation Start -->
+                                                <!-- /course Evaluation End -->
+                <li class="container-responsive">
+                    <p class="text-bold text-teal">
+                        1. First Semester Results (2025/26)                    </p>
+                    
+                                            <div class="text-info text-size-large text-center mt-20">
+                            <i class="icon-info3"></i> These results are provisional                        </div>
+                    
+
+                    <table class="table table-bordered table-striped">
+                        <caption class="text-semibold">
+                            <blockquote>
+                                <div class="semester-results-summary">
+                                    <label class="text-semibold text-teal"><i class="icon-notebook"></i> Semester
+                                        Results Summary</label>
+                                    <hr>
+                                    <p>
+                                        Total Credits: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em">76.00</span>
+                                        &nbsp;|&nbsp;
+                                        Total Grade Points: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em"></span>
+                                        &nbsp;|&nbsp;
+                                        GPA: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em"></span>
+                                        &nbsp;|
+                                        Status: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em"> -</span>&nbsp;
+                                        |
+                                        Remarks: -                                    </p>
+                                </div>
+                            </blockquote>
+                        </caption>
+                        <thead>
+                        <tr class="text-bold text-teal">
+                            <th class="text-center" style="width:20px">#</th>
+                            <th style="width: 7%">Code</th>
+                            <th>Title</th>
+                            <th style="width: 5%">Type</th>
+                            <th style="display: none">Description</th>
+                            <th style="width: 5%">Credits</th>
+                                                        <th style="width: 5%">Grade</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">1</th>
+                                    <td>CL 111</td>
+                                    <td>Communication Skills for Engineers</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">2</th>
+                                    <td>CS 174</td>
+                                    <td>Programming in C</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>CRV</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">3</th>
+                                    <td>DS 112</td>
+                                    <td>Development Perspectives I</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">4</th>
+                                    <td>ES 171</td>
+                                    <td>Computer Aided Drafting and Design (CADD)</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             8.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">5</th>
+                                    <td>ES 173</td>
+                                    <td>Introduction to Electrical Circuits</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">6</th>
+                                    <td>ME 101</td>
+                                    <td>Engineering Drawing</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             8.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">7</th>
+                                    <td>MT 161</td>
+                                    <td>Matrices and Basic Calculus For Non-Majors</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                                                </tbody>
+                    </table>
+                    <br>
+                </li>
+                            <!-- Course Evaluation Start -->
+                                                <!-- /course Evaluation End -->
+                <li class="container-responsive">
+                    <p class="text-bold text-teal">
+                        2. Second Semester Results (2025/26)                    </p>
+                    
+                                            <div class="text-info text-size-large text-center mt-20">
+                            <i class="icon-info3"></i> Provisional Results!                        </div>
+                    
+
+                    <table class="table table-bordered table-striped">
+                        <caption class="text-semibold">
+                            <blockquote>
+                                <div class="semester-results-summary">
+                                    <label class="text-semibold text-teal"><i class="icon-notebook"></i> Semester
+                                        Results Summary</label>
+                                    <hr>
+                                    <p>
+                                        Total Credits: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em">76.00</span>
+                                        &nbsp;|&nbsp;
+                                        Total Grade Points: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em"></span>
+                                        &nbsp;|&nbsp;
+                                        GPA: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em"></span>
+                                        &nbsp;|
+                                        Status: <span class="label label-striped label-rounded text-bold" style="font-size: 0.9em"> -</span>&nbsp;
+                                        |
+                                        Remarks: -                                    </p>
+                                </div>
+                            </blockquote>
+                        </caption>
+                        <thead>
+                        <tr class="text-bold text-teal">
+                            <th class="text-center" style="width:20px">#</th>
+                            <th style="width: 7%">Code</th>
+                            <th>Title</th>
+                            <th style="width: 5%">Type</th>
+                            <th style="display: none">Description</th>
+                            <th style="width: 5%">Credits</th>
+                                                        <th style="width: 5%">Grade</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">1</th>
+                                    <td>CS 175</td>
+                                    <td>Programming in Java</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>CRV</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">2</th>
+                                    <td>DS 113</td>
+                                    <td>Development Perspectives II</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>CRV</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">3</th>
+                                    <td>ES 110</td>
+                                    <td>Analogue Electronics I</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             8.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>CRV</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">4</th>
+                                    <td>ES 120</td>
+                                    <td>Digital Electronics I</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             8.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">5</th>
+                                    <td>IS 171</td>
+                                    <td>Introduction to Computer Networks</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             8.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">6</th>
+                                    <td>MT 171</td>
+                                    <td>One Variable Calculus for Non-Majors</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             12.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">7</th>
+                                    <td>TE 101</td>
+                                    <td>Introduction to Telecommunication</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             8.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>CRV</td>
+                                </tr>
+                            
+                        
+                            
+                                                            <tr class="">
+                                    <th class="text-center">8</th>
+                                    <td>TE 172</td>
+                                    <td>Workshop Training</td>
+                                    <td>
+                                    <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">Core</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-bold label label-rounded label-striped " style="text-transform: none; font-size: 0.9em">
+                                             8.00                                        </span>
+                                    </td>
+
+                                                                        <td class="text-center">
+                                        <span class="text-bold label label-rounded label-striped" style="text-transform: none; font-size: 0.9em">
+                                            -                                         </span>
+                                    </td>
+                                    <td>Inc</td>
+                                </tr>
+                            
+                                                </tbody>
+                    </table>
+                    <br>
+                </li>
+                    </ol>
+    </div>
+
+
+<script>
+    function CustomChecker(item, value, name, destination, maintainOriginalData = false) {
+        if ($(`input:radio[name='${name}']`).is(":checked")) {
+            $("#" + destination).val(value);
+        }
+        if (!maintainOriginalData) {
+            validateSectionAnswers(item);
+        }
+        selectionBehaviour(item, value, true, maintainOriginalData);
+    }
+
+    function validateMoreField(item) {
+        let moreFieldID = $(item).data('more');
+        let moreField = $(`#${moreFieldID}`);
+        let moreDiv = $(`#${moreFieldID}_div`);
+        let helpElement = $(`#${moreFieldID}_help`);
+
+
+        moreDiv.addClass("required");
+        moreField.attr(`aria-required`, true);
+        moreField.attr(`aria-invalid`, true);
+        moreDiv.addClass("has-error");
+        helpElement.show();
+        if ($(item).val()) {
+            moreField.attr(`aria-required`, false);
+            moreField.attr(`aria-invalid`, false);
+            moreDiv.removeClass("required");
+            moreDiv.removeClass("has-error");
+            helpElement.hide();
+        }
+        let fieldID = moreFieldID.replace('_more', '');
+        validateSectionAnswers(`#${fieldID}`);
+    }
+
+
+    function selectionBehaviour(item, value, setError = false, maintainOriginalData = false) {
+        let scaleType = $(item).data('scale');
+        let scoreType = $(item).data('score');
+        let moreFieldID = $(item).data('more');
+        let moreField = $(`#${moreFieldID}`);
+        let moreDiv = $(`#${moreFieldID}_div`);
+        let helpElement = $(`#${moreFieldID}_help`);
+        let dichotomous = `2`;
+        let freeText = `0`;
+        let higherBetter = `1`;
+        let lowerBetter = `2`;
+        moreField.hide();
+
+        //moreField.val("");
+
+        moreField.attr(`aria-required`, false);
+        moreDiv.removeClass("required");
+        moreDiv.removeClass("has-error");
+        helpElement.hide();
+        let scoreTypeValidatorInverted = ((parseInt(value) === 1 && parseInt(scoreType) === parseInt(lowerBetter)) || (parseInt(value) === 0 && parseInt(scoreType) === parseInt(higherBetter)));
+        //let scoreTypeValidator = ((parseInt(value) === 1 && parseInt(scoreType) === parseInt(higherBetter)) || (parseInt(value) === 0 && parseInt(scoreType) === parseInt(lowerBetter)));
+
+
+        if ((parseInt(scaleType) === parseInt(freeText) && parseInt(value) === 1) || (parseInt(scaleType) === parseInt(dichotomous) && scoreTypeValidatorInverted)) {
+            moreField.show();
+            moreDiv.addClass("required");
+            moreField.attr(`aria-required`, true);
+            if (setError && !moreField.val()) {
+                moreField.attr(`aria-invalid`, true);
+                moreDiv.addClass("has-error");
+                helpElement.show();
+                return false;
+            }
+        } else {
+            if (!maintainOriginalData) {
+                moreField.val("");
+            }
+        }
+
+        if (setError) {
+            return true;
+        }
+    }
+
+    function validateField(section, course, instructor) {
+        let valid = true;
+        let counter = 0;
+        let invalidCount = 0;
+        let sectionAnswerFields = $(`.section${section}_${course}_${instructor}Answer`);
+        sectionAnswerFields.each(function (index, input) {
+            counter++;
+            let inputValue = $(input).val();
+            if (!$(input).val()) {
+                invalidCount++;
+                valid = false;
+            }
+
+            if (!selectionBehaviour(input, inputValue, true)) {
+                valid = false;
+                invalidCount++;
+            }
+
+        });
+        return {
+            valid: invalidCount === 0,
+            invalidCount: invalidCount,
+            counter: counter
+        };
+    }
+
+    function courseProgress(course, setError = true, maintainOriginalData = false) {
+        let courseProgress = $(`#course_${course}_evaluation_progress`);
+        let courseAnswers = $(`.answer_course_${course}`);
+        let total = 0;
+        let attended = 0;
+        let percentage = 0;
+        courseAnswers.each(function (index, input) {
+            total++;
+            let inputValue = $(input).val();
+            if ($(input).val()) {
+                attended++;
+            }
+
+            if (!selectionBehaviour(input, inputValue, setError, maintainOriginalData)) {
+                attended--;
+            }
+        });
+        if (total > 0) {
+            percentage = ((attended / total) * 100).toFixed(0);
+        }
+        courseProgress.html(`${percentage}%`);
+    }
+
+    function semesterProgress(semester, setError = true, maintainOriginalData = false) {
+        let semesterAnswers = $(`.answer_semester_${semester}`);
+        let semesterProgress = $(`#semester_${semester}_evaluation_progress`);
+
+        let total = 0;
+        let attended = 0;
+        let percentage = 0;
+        semesterAnswers.each(function (index, input) {
+            total++;
+            let inputValue = $(input).val();
+            if ($(input).val()) {
+                attended++;
+            }
+            if (!selectionBehaviour(input, inputValue, setError, maintainOriginalData)) {
+                attended--;
+            }
+        });
+        if (total > 0) {
+            percentage = ((attended / total) * 100).toFixed(0);
+        }
+        semesterProgress.html(`${percentage}%`);
+    }
+
+    function sectionProgress(section, course, instructor, setError = true, maintainOriginalData = false) {
+        let sectionAnswers = $(`.section${section}_${course}_${instructor}Answer`);
+        let sectionProgress = $(`#section_${section}_${course}_${instructor}_evaluation_progress`);
+        let sectionProgressInput = $(`#section_${section}_${course}_${instructor}_progress_input`);
+        let total = 0;
+        let attended = 0;
+        let percentage = 0;
+        sectionAnswers.each(function (index, input) {
+            total++;
+            let inputValue = $(input).val();
+            if ($(input).val()) {
+                attended++;
+            }
+            if (!selectionBehaviour(input, inputValue, setError, maintainOriginalData)) {
+                attended--;
+            }
+        });
+        if (total > 0) {
+            percentage = ((attended / total) * 100).toFixed(0);
+        }
+        sectionProgress.html(`${percentage}%`);
+        sectionProgressInput.val(percentage);
+    }
+
+    function validateSectionAnswers(item, showAlert = true) {
+        let section = $(item).data('section');
+        let course = $(item).data('course');
+        let semester = $(item).data('semester');
+        let sectionName = $(item).data('description');
+        let instructor = $(item).data('instructor');
+        //let instructorName = $(item).data('instructorName');
+
+        let percentage = 0;
+        let progressDiv = $(`#section_${section}_${course}_${instructor}_evaluation_progress`);
+        let sectionProgressInput = $(`#section_${section}_${course}_${instructor}_progress_input`);
+        let sectionDiv = $(`#section_${section}_${course}_${instructor}`);
+        let validation = validateField(section, course, instructor);
+        let counter = parseInt(validation.counter);
+        let valid = validation.valid;
+        let invalidCount = parseInt(validation.invalidCount);
+        //let allSectionDivs = $(`.section_${course}_${instructor}`);
+        let allSectionDivs = $(`.section_${course}`);
+        allSectionDivs.hide();
+        sectionDiv.show();
+        if (counter !== 0) {
+            percentage = (((counter - invalidCount) / counter) * 100).toFixed(0);
+        }
+        progressDiv.html(`${percentage}%`);
+        sectionProgressInput.val(percentage);
+        courseProgress(course);
+        semesterProgress(semester);
+        let toastMessage = `${invalidCount}/${counter} Questions left on ${sectionName}`;
+        if (invalidCount === 0) {
+            sectionDiv.hide();
+            toastMessage = `Congratulations! You have completed ${sectionName} `
+        }
+        if (showAlert) {
+            showToast(`<div class="text-success">${toastMessage}</div>`, 5000);
+        }
+        if (invalidCount === 0 && showAlert) {
+            goToNextSection(section, course, instructor);
+        }
+
+        return valid;
+    }
+
+
+    function goToNextSection(currentSection, course, instructor) {
+        let hasNextSession = false;
+        let sectionElements = $(`.section_${course}_${instructor}`);
+        let sections = [];
+        let currentSectionDivID = `section_${currentSection}_${course}_${instructor}`;
+        sectionElements.each(function (index, sectionDiv) {
+            let sectionDivID = $(sectionDiv).attr("id");
+            if (sectionDivID !== currentSectionDivID) {
+                let sectionSplit = sectionDivID.split('_');
+                let checkFieldValidation = validateField(sectionSplit[1], sectionSplit[2], sectionSplit[3]);
+                if (!checkFieldValidation.valid) {
+                    sections.push(sectionDivID);
+                }
+            }
+        });
+
+        if (sections.length > 0) {
+            hasNextSession = true;
+        }
+
+        if (hasNextSession) {
+            $(`#${sections[0]}`).show();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+        if (!hasNextSession) {
+            submitEvaluation(course);
+        }
+    }
+
+    function submitEvaluation(course, submit = false) {
+        let courseAnswers = $(`.answer_course_${course}`);
+        let payload = [];
+        let submitButton = $(`#btn_submit_course${course}`);
+        let submitInput = $(`#is_submitted${course}`);
+        courseAnswers.each(function (index, answerInput) {
+            let inputID = $(answerInput).attr('id');
+            let moreInputID = `${inputID}_more`;
+            let moreInput = $(`#${moreInputID}`);
+            let dataAttributes = {
+                input_id: inputID,
+                input_more_id: moreInputID,
+                question_id: $(answerInput).data('question'),
+                course_id: $(answerInput).data('course'),
+                question_code: $(answerInput).data('code'),
+                section_id: $(answerInput).data('section'),
+                instructor_id: $(answerInput).data('instructor'),
+                answer_score: $(answerInput).val(),
+                answer_more: $(moreInput).val(),
+            };
+            payload.push(dataAttributes);
+        });
+        $.ajax({
+            url: '/index.php?r=student%2Fmy-course-evaluation%2Fsubmit-answer',
+            type: 'POST',
+            data: {
+                csrf: "TZ32kmwv8r4W_8wIG3KVG0HpGu4_GKJJ_dxfCsIjbHkurrDWJWDL8UyUvV0rSqNfL4dDoFEolAqSuzFujnMaLg==",
+                instructor: $(`#instructors${course}`).val(),
+                offering: $(`#offering${course}`).val(),
+                version: $(`#version${course}`).val(),
+                academic_year: $(`#academic_year${course}`).val(),
+                semester: $(`#semester${course}`).val(),
+                payload: payload,
+                submit: submit
+            },
+            error: function (error) {
+                swal({
+                    type: 'error',
+                    title: 'ERROR!',
+                    text: 'An error has occurred!',
+                });
+            },
+            beforeSend: function () {
+                if (submit) {
+                    submitButton.hide();
+                }
+            },
+            success: function (data) {
+
+                submitButton.show();
+                updateSubmissionState(course);
+                if (data.type && submit) {
+                    submitInput.val(1);
+                    updateSubmissionState(course);
+                }
+
+                swal({
+                    type: data.code,
+                    title: data.title,
+                    text: data.message,
+                }, function (vl) {
+                    if (vl) {
+                        if (data.type) {
+                            window.location.reload(1);
+                        } else {
+                            multipleInstructorSections(course);
+                        }
+
+                    }
+                });
+            }
+        });
+    }
+
+    function multipleInstructorSections(course) {
+        let progressInput = $(`.section_${course}_progress_input`);
+        progressInput.each(function (index, input) {
+            let percentage = parseInt($(input).val());
+            let instructor_id = $(input).data('instructor');
+            let sectionDiv = $(`.section_${course}_${instructor_id}`);
+            if (percentage !== 100) {
+                sectionDiv.show();
+            }
+        });
+    }
+
+    function updateSubmissionState(course) {
+        let submitInput = $(`#is_submitted${course}`);
+        let submitStateDiv = $(`#course_${course}_submit_state`);
+        let sectionDivs = $(`.section_${course}`);
+        let submitButton = $(`#btn_submit_course${course}`);
+        let courseTitle = $(`#course_${course}_title`);
+        courseTitle.removeClass('text-success');
+        if (parseInt(submitInput.val()) === 1) {
+            sectionDivs.hide();
+            submitButton.hide();
+            submitStateDiv.show();
+            courseTitle.addClass('text-success');
+        }
+    }
+
+    function dynamicUpdate() {
+        let allRadioButtons = $(".answerOption");
+        allRadioButtons.each(function (index, radio) {
+            let course = $(radio).data('course');
+            let semester = $(radio).data('semester');
+            let section = $(radio).data('section');
+            let instructor = $(radio).data('instructor');
+            let setError = true;
+            let maintainOriginalData = true;
+            sectionProgress(section, course, instructor, setError, maintainOriginalData);
+            courseProgress(course, setError, maintainOriginalData);
+            semesterProgress(semester, setError, maintainOriginalData);
+            updateSubmissionState(course);
+        });
+    }
+
+
+    $(document).ready(function () {
+        document.querySelector('body').onload = () => {
+            dynamicUpdate();
+        };
+
+
+    });
+</script>
+                    </div>
+    </div>
+
+
+
+    </div>
+</div>
+                            <!--?/*= Alert::widget(); */?-->
+                            
+                        </div>
+                        <!--</div>-->
+                        <!-- /content area -->
+
+                    </div>
+                    <!-- /main content -->
+
+
+                </div>
+                <!-- /page content -->
+
+            </div>
+            <!-- /page container -->
+        </div>
+
+        <!--Footer-->
+                
+
+
+    
+    <style>
+        .summary-list {
+            list-style: none;
+        }
+
+        .summary-list li {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .container-responsive {
+            overflow: auto;
+        }
+    </style>
+
+    <!-- Footer -->
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <ul class="nav navbar-nav no-border visible-xs-block">
+            <li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second"><i class="icon-circle-up2"></i></a></li>
+        </ul>
+
+        <div class="navbar-collapse collapse" id="navbar-second">
+            <div class="navbar-text">
+                © 2026. ARIS 3.0 Powered by <a href="https://www.ucc.co.tz" target="_blank">UCC</a>
+            </div>
+
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" data-toggle="modal" data-target="#help_center">Help center</a></li>
+                    <li><a href="https://www.privacypolicies.com/agreement/view/d1b14780926dbe72fcb612adb134e753" target="_blank">Policy</a></li>
+                    <li class="hide"><a href="#" class="text-semibold">Upgrade your account</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-cog3"></i>
+                            <span class="visible-xs-inline-block position-right">Settings</span>
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right hidden">
+                            <li><a href="#"><i class="icon-dribbble3"></i> Dribbble</a></li>
+                            <li><a href="#"><i class="icon-pinterest2"></i> Pinterest</a></li>
+                            <li><a href="#"><i class="icon-github"></i> Github</a></li>
+                            <li><a href="#"><i class="icon-stackoverflow"></i> Stack Overflow</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            /*$(".alert").fadeTo(5000, 500).slideUp(500, function(){
+             $(".alert").alert('close');
+             });*/
+
+            $(".alert").fadeTo(15000, 500).fadeOut(15000, function () {
+                $(".alert").alert('close');
+            });
+
+            function SyncWardenInfo(item) {
+                let pk = $(item).data('pk');
+                let level = $(item).data('level');
+                let affected = "sections";
+                switch (level) {
+                    case 'hostel':
+                        affected = " blocks, floors and rooms under this hostel ";
+                        break;
+                    case 'block':
+                        affected = " floors and rooms under this block ";
+                        break;
+                    case 'floor':
+                        affected = " rooms under this floor ";
+                        break;
+
+                }
+                swal({
+                        title: "Synchronizing Warden information",
+                        text: "This action will affect all " + affected + ".Are you sure you want to proceed?",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#2196F3",
+                        closeOnConfirm: false,
+                        animation: "slide-from-top",
+                        inputPlaceholder: "Reasons for Renewing this bill"
+                    },
+                    function (inputValue) {
+                        if (inputValue === false || inputValue === "") {
+                            return false
+                        } else {
+                            $.ajax({
+                                url: "/index.php?r=accommodation%2Fdefault%2Fauto-sync-warden",
+                                cache: false,
+                                type: "POST",
+                                data: {
+                                    pk: pk,
+                                    level: level,
+                                },
+                                error: function (error) {
+                                    swal({
+                                        title: "ERROR!",
+                                        text: "An Error has occurred", //text: error.responseText,
+                                        type: "error",
+                                        confirmButtonColor: "#2196F3"
+                                    });
+                                },
+                                success: function (data) {
+                                    let output = $.parseJSON(data);
+                                    let code = output.code;
+                                    let message = output.message;
+                                    let title = output.title;
+
+
+                                    swal({
+                                        title: title,
+                                        text: message,
+                                        type: code,
+                                        confirmButtonColor: "#2196F3"
+                                    }, function (inputOption) {
+                                        if (inputOption === false) return false;
+                                        if (inputOption === "") {
+                                            return false
+                                        }
+                                    });
+
+                                }
+
+
+                            });
+
+                        }
+
+                    });
+            }
+
+            function RenewBill(item) {
+                let id = $(item).attr('bill_id');
+                swal({
+                        title: "Renewing a Bill!",
+                        text: "Why do you want to renew this bill?",
+                        type: "input",
+                        showCancelButton: true,
+                        confirmButtonColor: "#2196F3",
+                        closeOnConfirm: false,
+                        animation: "slide-from-top",
+                        inputPlaceholder: "Reasons for Renewing this bill"
+                    },
+                    function (inputValue) {
+                        if (inputValue === false) return false;
+                        if (inputValue === "") {
+                            swal.showInputError("You need to provide reasons for Renewing this Bill");
+                            return false
+                        }
+                        $.ajax({
+                            url: "#",
+                            cache: false,
+                            type: "POST",
+                            data: {
+                                id: id,
+                                reasons: inputValue,
+                            },
+                            error: function (error) {
+                                swal({
+                                    title: "ERROR!",
+                                    text: "An Error has occurred", //text: error.responseText,
+                                    type: "error",
+                                    confirmButtonColor: "#2196F3"
+                                });
+                            },
+                            success: function (data) {
+                                let output = $.parseJSON(data);
+                                let code = '';
+                                let message = '';
+                                $.each(output, function (index, value) {
+                                    code = value.code;
+                                    message = value.message;
+                                });
+
+                                swal({
+                                    title: code.toUpperCase() + "!",
+                                    text: message,
+                                    type: code,
+                                    confirmButtonColor: "#2196F3"
+                                }, function (inputOption) {
+                                    if (inputOption === false) return false;
+                                    if (inputOption === "") {
+                                        return false
+                                    } else {
+                                        window.location.reload();
+                                    }
+                                });
+
+                            }
+
+
+                        });
+
+                    });
+            }
+
+            function CancelBill(item) {
+                let id = $(item).attr('bill_id');
+                swal({
+                        title: "Cancelling a Bill!",
+                        text: "Why do you want to Cancel this bill?",
+                        type: "input",
+                        showCancelButton: true,
+                        confirmButtonColor: "#2196F3",
+                        closeOnConfirm: false,
+                        animation: "slide-from-top",
+                        inputPlaceholder: "Reasons for Cancelling this bill"
+                    },
+                    function (inputValue) {
+                        if (inputValue === false) return false;
+                        if (inputValue === "") {
+                            swal.showInputError("You need to provide reasons for Cancelling this Bill");
+                            return false
+                        }
+                        $.ajax({
+                            url: "#",
+                            cache: false,
+                            type: "POST",
+                            data: {
+                                id: id,
+                                reasons: inputValue,
+                            },
+                            error: function (error) {
+                                swal({
+                                    title: "ERROR!",
+                                    text: "An Error has occurred", //text: error.responseText,
+                                    type: "error",
+                                    confirmButtonColor: "#2196F3"
+                                });
+                            },
+                            success: function (data) {
+                                let output = $.parseJSON(data);
+                                let code = '';
+                                let message = '';
+                                $.each(output, function (index, value) {
+                                    code = value.code;
+                                    message = value.message;
+                                });
+
+                                swal({
+                                    title: code.toUpperCase() + "!",
+                                    text: message,
+                                    type: code,
+                                    confirmButtonColor: "#2196F3"
+                                }, function (inputOption) {
+                                    if (inputOption === false) return false;
+                                    if (inputOption === "") {
+                                        return false
+                                    } else {
+                                        window.location.reload();
+                                    }
+                                });
+
+                            }
+
+
+                        });
+
+                    });
+            }
+
+            function PrintOut(item) {
+                let id = $(item).data('pk');
+                let option = $(item).data('option');
+                let destination = $(item).data('destination');
+                let bank_id = $(item).data('bank_id');
+                let link = $(item).data('link');
+                $.ajax({
+                    url: link,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        csrf: "TZ32kmwv8r4W_8wIG3KVG0HpGu4_GKJJ_dxfCsIjbHkurrDWJWDL8UyUvV0rSqNfL4dDoFEolAqSuzFujnMaLg==",
+                        id: id,
+                        option: option,
+                        destination: destination,
+                        bank: bank_id
+                    },
+
+                    beforeSend: function () {
+
+                    },
+
+                    error: function (error) {
+                        swal({
+                            title: "ERROR!",
+                            text: "An Error has occurred", //text: error.responseText,
+                            type: "error",
+                            confirmButtonColor: "#2196F3"
+                        });
+                    },
+
+                    success: function (data) {
+                        let output = $.parseJSON(data);
+                        let code = '';
+                        let message = '';
+                        let fileLink = '';
+                        $.each(output, function (index, value) {
+                            code = value.code;
+                            message = value.message;
+                            fileLink = value.file_url;
+                        });
+
+                        let link = document.createElement('a');
+                        link.href = fileLink;
+                        link.download = 'printout_' + id + '.pdf';
+                        link.click();
+                        swal({
+                            title: (code + "!").toUpperCase(),
+                            text: message,
+                            type: code,
+                            confirmButtonColor: "#2196F3"
+                        });
+
+                    },
+
+                    complete: function () {
+
+                    }
+
+                });
+
+
+            }
+
+            function LoadBill(item) {
+
+                let bill_id = $(item).attr('bill_id');
+                $.ajax({
+                    url: "/index.php?r=finance%2Fstudent-bill%2Fdata-table",
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        csrf: "TZ32kmwv8r4W_8wIG3KVG0HpGu4_GKJJ_dxfCsIjbHkurrDWJWDL8UyUvV0rSqNfL4dDoFEolAqSuzFujnMaLg==",
+                        bill_id: bill_id,
+                    },
+
+                    beforeSend: function () {
+                        $("#receipt_breakdown").html("");
+                    },
+
+                    error: function (error) {
+                        swal({
+                            title: "ERROR!",
+                            text: "An Error has occurred", //text: error.responseText,
+                            type: "error",
+                            confirmButtonColor: "#2196F3"
+                        });
+                    },
+
+                    success: function (data) {
+                        let output = $.parseJSON(data);
+                        let bill_amount = 0;
+                        let counter = 0;
+                        let itemAmount = 0;
+                        let currency = "";
+                        $.each(output, function (index, value) {
+                            counter++;
+                            //console.log($(item).attr('bill_id'));
+                            let studentName = value.registration_number + ' | ' + value.surname + ',' + value.first_name + ' ' + value.middle_name;
+
+                            let control_number = value.control_number;
+                            let bill_number = value.bill_number;
+                            let billed_item = value.item_cost_name;
+                            currency = value.billed_currency;
+                            itemAmount = (value.item_bill_amount * 1);
+                            bill_amount += itemAmount;
+
+                            let bill_date = value.date_billed;
+                            let reg_no = value.registration_number;
+
+                            $("#receipt_panel_title").html(bill_number);
+                            $("#receipt_qr_text").val(bill_number);
+
+                            $("#receipt_bill_number").html(bill_number);
+                            $("#receipt_academic_year").html(value.academic_year);
+                            $("#receipt_status_remarks").html(value.status_remarks);
+                            $("#receipt_student_yos").html(ordinalSuffix(value.year_of_study) + ' year');
+                            $("#receipt_student_programme").html(value.programme_name);
+                            $("#receipt_payment_option").html(value.payment_option);
+                            $("#receipt_bill_source").html(value.bill_type);
+                            $("#receipt_control_number").html(control_number);
+                            $("#receipt_bill_date").html(bill_date);
+                            $("#receipt_expiry_date").html(value.expiry_date + "( " + spanDuration("2026-09-13 20:52:08", value.control_number_expiry_date) + ")");
+
+                            $("#receipt_bill_currency").html(currency);
+
+                            $("#receipt_bill_amount").html(addCommas(bill_amount.toFixed(2)));
+                            $("#receipt_registration_number").html(value.registration_number);
+                            $("#receipt_student_name").html(studentName);
+
+                            $("#receipt_breakdown").append(
+                                "<tr>" +
+                                "<td>" + counter + ".</td>" +
+                                "<td>" + billed_item + "</td>" +
+                                "<th class='text-bold text-right'>" + addCommas(itemAmount.toFixed(2)) + "</th>" +
+                                "</tr>"
+                            );
+
+                        });
+
+                        $("#receipt_breakdown").append(
+                            "<tr class='border-double text-bold text-uppercase'>" +
+                            "<td colspan='2' class='text-center text-bold'>Total</td>" +
+                            "<th class='text-bold text-right text-size-large'><sup class='text-bold text-muted'>" + currency + "</sup>" + addCommas(bill_amount.toFixed(2)) + "</th>" +
+                            "</tr>"
+                        );
+
+                    },
+
+                    complete: function () {
+                        $("#receipt_qrcode").html("");
+                        makeCode($("#receipt_bill_number").html());
+                    }
+
+                });
+
+
+            }
+
+            function makeCode(string) {
+                let qrcode = new QRCode(document.getElementById("receipt_qrcode"), {
+                    width: 100,
+                    height: 100
+                });
+                qrcode.makeCode(string);
+            }
+
+            function ordinalSuffix(i) {
+                let j = i % 10,
+                    k = i % 100;
+                if (j == 1 && k != 11) {
+                    return i + "st";
+                }
+                if (j == 2 && k != 12) {
+                    return i + "nd";
+                }
+                if (j == 3 && k != 13) {
+                    return i + "rd";
+                }
+                return i + "th";
+            }
+
+            function ordinalSuffixFancy(i) {
+                let j = i % 10,
+                    k = i % 100;
+                if (j == 1 && k != 11) {
+                    return i + "<sup>st</sup>";
+                }
+                if (j == 2 && k != 12) {
+                    return i + "<sup>nd</sup>";
+                }
+                if (j == 3 && k != 13) {
+                    return i + "<sup>rd</sup>";
+                }
+                return i + "<sup>th</sup>";
+            }
+
+            function addCommas(nStr) {
+                nStr += '';
+                x = nStr.split('.');
+                x1 = x[0];
+                x2 = x.length > 1 ? '.' + x[1] : '';
+                let rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+
+            function DigitalNumber(number, cssClass = null, zero_prefix = true) {
+
+                let digital = '';
+                let zero = '<span class="icon-seven-segment-0 ' + cssClass + '"></span>';
+                let one = '<span class="icon-seven-segment-1 ' + cssClass + '"></span>';
+                let two = '<span class="icon-seven-segment-2 ' + cssClass + '"></span>';
+                let three = '<span class="icon-seven-segment-3 ' + cssClass + '"></span>';
+                let four = '<span class="icon-seven-segment-4 ' + cssClass + '"></span>';
+                let five = '<span class="icon-seven-segment-5 ' + cssClass + '"></span>';
+                let six = '<span class="icon-seven-segment-6 ' + cssClass + '"></span>';
+                let seven = '<span class="icon-seven-segment-7 ' + cssClass + '"></span>';
+                let eigth = '<span class="icon-seven-segment-8 ' + cssClass + '"></span>';
+                let nine = '<span class="icon-seven-segment-9 ' + cssClass + '"></span>';
+                let numberLine = [];
+                numberLine.push(zero);
+                numberLine.push(one);
+                numberLine.push(two);
+                numberLine.push(three);
+                numberLine.push(four);
+                numberLine.push(five);
+                numberLine.push(six);
+                numberLine.push(seven);
+                numberLine.push(eigth);
+                numberLine.push(nine);
+
+                let numberArray = number.toString();
+                for (let i = 0; i < numberArray.length; i++) {
+                    if (zero_prefix && number < 10) {
+                        //Prefix zero
+                        digital += zero;
+                        digital += numberLine[numberArray[i]];
+                    } else {
+                        digital += numberLine[numberArray[i]];
+                    }
+
+                }
+
+                return digital;
+            }
+
+            function RadioChecker(item) {
+                if ($("input:radio[name='activation']").is(":checked")) {
+                    $("#is_active").val(item);
+                }
+            }
+
+            function BooleanChecker(item) {
+                if ($("input:radio[name='boolean']").is(":checked")) {
+                    $("#boolean_input").val(item);
+                }
+            }
+
+            function FlexibleChecker(item, name, destination) {
+                if ($("input:radio[name='" + name + "']").is(":checked")) {
+                    $("#" + destination).val(item);
+                }
+            }
+
+            function DateAdd(startDate, span, interval) {
+                let endDate = new Date(startDate);
+                switch (interval) {
+                    case 'day':
+                        endDate.setDate(endDate.getDate() + parseInt(span));
+                        break;
+                    case 'month':
+                        endDate.setMonth(endDate.getMonth() + parseInt(span));
+                        break;
+                    case 'year':
+                        endDate.setFullYear(endDate.getFullYear() + parseInt(span));
+                        break;
+                }
+                let dateFormatted = endDate.toISOString().substr(0, 10);
+                return dateFormatted;
+            }
+
+            function dateFormat(format, timestamp = new Date()) {
+                const date = new Date(timestamp);
+
+                const pad = (n, c = 2) => String(n).padStart(c, '0');
+
+                const formatMap = {
+                    Y: date.getFullYear(),                      // 4-digit year
+                    y: String(date.getFullYear()).slice(-2),    // 2-digit year
+                    m: pad(date.getMonth() + 1),                // 2-digit month
+                    n: date.getMonth() + 1,                     // Month without leading zero
+                    d: pad(date.getDate()),                     // 2-digit day
+                    j: date.getDate(),                          // Day without leading zero
+                    H: pad(date.getHours()),                    // 24-hour format
+                    h: pad((date.getHours() % 12) || 12),       // 12-hour format
+                    i: pad(date.getMinutes()),                  // Minutes
+                    s: pad(date.getSeconds()),                  // Seconds
+                    a: date.getHours() < 12 ? 'am' : 'pm',      // am or pm
+                    A: date.getHours() < 12 ? 'AM' : 'PM',      // AM or PM
+                    D: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()],
+                    l: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()],
+                    M: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][date.getMonth()],
+                    F: ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()],
+                };
+
+                return format.replace(/\\?([a-zA-Z])/g, (match, token) => {
+                    if (match[0] === '\\') return token; // Escape character
+                    return token in formatMap ? formatMap[token] : token;
+                });
+            }
+
+            function spanDuration(startDate, endDate) {
+                let hours = Span(startDate, endDate, 'h');
+                let days = Span(startDate, endDate, 'd');
+                let months = Span(startDate, endDate, 'm');
+                let years = Span(startDate, endDate, 'y');
+                let Duration = '';
+
+
+                if (hours < 24 && days < 1) {
+                    Duration = hours + ' hours';
+                } else {
+                    if (days < 28 && months < 1) {
+                        Duration = days + ' days';
+                    } else {
+                        if (months < 12 && years < 1) {
+                            Duration = months + ' months';
+                        } else {
+                            if (years >= 1) {
+                                Duration = years + ' years';
+                            }
+                        }
+                    }
+                }
+
+                if (startDate > endDate) {
+                    //Duration += ' ago';
+                    Duration += ' to come';
+
+                } else {
+                    //Duration += ' to come';
+                    Duration += ' ago';
+                }
+
+                return Duration;
+            }
+
+            function Span(startDate, endDate, interval) {
+                let output = 0;
+                let date1 = new Date(startDate);
+                let date2 = new Date(endDate);
+
+                let year1 = date1.getFullYear();
+                let year2 = date2.getFullYear();
+
+                let month1 = date1.getMonth();
+                let month2 = date2.getMonth();
+                let diff = Date.parse(endDate) - Date.parse(startDate);
+                switch (interval) {
+                    case 'y':
+                        output = (year2 - year1);
+                        break;
+                    case 'm':
+                        output = (Span(startDate, endDate, 'y') * 12) + (month2 - month1);
+                        break;
+                    case 'd':
+                        output = Math.floor(diff / 86400000);
+                        break;
+                    case 'h':
+                        output = Math.floor(diff / 3600000);
+                        break;
+                    case 'i':
+                        output = Math.floor(diff / 60000);
+                        break;
+                    case 's':
+                        output = Math.floor(diff / 1000);
+                        break;
+                }
+
+
+                return output;
+            }
+                        $(document).ready(function () {
+
+
+                // Basic initialization
+                /*  $('.multiselect').multiselect({
+                 onChange: function () {
+                 $.uniform.update();
+                 }
+                 });*/
+
+                /* let switches = Array.prototype.slice.call(document.querySelectorAll('.switch'));
+                 switches.forEach(function(html) {
+                     let switchery = new Switchery(html, {color: '#4CAF50'});
+                 });*/
+                $('table thead a').addClass('text-white text-uppercase');
+                $('table thead select').attr('class', 'select');
+                //$('.panel panel-flat').addClass('table-responsive');
+                //$('.select2').select2();
+                $('.select').select2();
+
+
+                // Single picker
+
+                $('.date').daterangepicker({
+                    singleDatePicker: true,
+                    locale: {
+                        format: 'YYYY-MM-DD',
+                        //dddd - Friday
+                        //dd - Fri
+                    }
+                });
+
+                // Dropdown selectors
+                $('.date2').pickadate({
+                    today: '',
+                    close: '',
+                    clear: 'Clear selection',
+
+                    // formatSubmit: 'YYYY-MM-DD',
+                    labelMonthNext: 'Go to the next month',
+                    labelMonthPrev: 'Go to the previous month',
+                    labelMonthSelect: 'Pick a month from the dropdown',
+                    labelYearSelect: 'Pick a year from the dropdown',
+                    selectMonths: true,
+                    selectYears: true
+                });
+
+
+                // Time picker
+                $(".time").AnyTime_picker({
+                    format: "%H:%i"
+                });
+
+
+                // Time picker
+                $(".DateTime").AnyTime_picker({
+                    format: "%Z-%m-%d %H:%i:%s"
+                });
+
+                // Basic initialization
+                $('.multi-select-full').multiselect({
+                    includeSelectAllOption: true,
+                    enableFiltering: true,
+                    buttonClass: 'form-control',
+                    buttonWidth: '100%',
+                    templates: {
+                        //ul: '<ul class="multiselect-container bg-teal-400 dropdown-menu"></ul>',
+                        filter: '<li class="multiselect-item multiselect-filter"><i class="icon-search4" style="z-index: 1000; margin-bottom: -5px"></i> <input class="form-control" type="text"></li>'
+                    },
+                    onChange: function () {
+                        $.uniform.update();
+                    },
+                    onSelectAll: function () {
+                        $.uniform.update();
+                    }
+                });
+
+
+                // Related plugins
+                // ------------------------------
+
+                // Styled checkboxes and radios
+                // $(".styled, .multiselect-container input").uniform({radioClass: 'choice'});
+
+
+                // Accessibility labels
+                $('.pickadate-accessibility').pickadate({
+                    labelMonthNext: 'Go to the next month',
+                    labelMonthPrev: 'Go to the previous month',
+                    labelMonthSelect: 'Pick a month from the dropdown',
+                    labelYearSelect: 'Pick a year from the dropdown',
+                    selectMonths: true,
+                    selectYears: true
+                });
+
+// Checkboxes/radios (Uniform)
+                // ------------------------------
+
+                // Default initialization
+                $(".styled, .multiselect-container input").uniform({
+                    radioClass: 'choice'
+                });
+
+                // File input
+                $(".file-styled").uniform({
+                    wrapperClass: 'bg-blue',
+                    fileButtonHtml: '<i class="icon-file-plus"></i>'
+                });
+                // Custom color
+                $('[data-popup=popover-custom]').popover({
+                    template: '<div class="popover border-primary"><div class="arrow"></div><h3 class="popover-title bg-primary-400"></h3><div class="popover-content"></div></div>'
+                });
+
+                // Custom solid color
+                $('[data-popup=popover-solid]').popover({
+                    template: '<div class="popover bg-primary"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content text-danger"></div></div>'
+                });
+                //
+                // Contextual colors
+                //
+                // default
+                $(".control-default").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-slate-600 text-slate-800'
+                });
+
+                // Primary
+                $(".control-primary").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-primary-600 text-primary-800'
+                });
+
+                // Danger
+                $(".control-danger").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-danger-600 text-danger-800'
+                });
+
+                // Success
+                $(".control-success").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-success-600 text-success-800'
+                });
+
+                // Warning
+                $(".control-warning").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-warning-600 text-warning-800'
+                });
+                // Warning
+                $(".control-orange").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-orange-600 text-orange-800'
+                });
+
+                // Info
+                $(".control-info").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-info-600 text-info-800'
+                });
+
+                // Custom color
+                $(".control-custom").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-indigo-600 text-indigo-800'
+                });
+
+                // White color
+                $(".control-white").uniform({
+                    radioClass: 'choice',
+                    wrapperClass: 'border-white text-white'
+                });
+
+
+            });
+
+                    </script>
+    </div>
+
+    <script>
+        function removeTopTableBorder() {
+            let table = document.getElementsByClassName('no-border-top')[0];
+            if (table != null || table != undefined) {
+                let tbody = table.getElementsByTagName('tbody')[0];
+                let firstRow = tbody.getElementsByTagName('tr')[0];
+                firstRow.getElementsByTagName('th')[0].style.borderTop = 'none';
+                firstRow.getElementsByTagName('td')[0].style.borderTop = 'none';
+            }
+        }
+
+        function handleTableResponsiveness() {
+            $('table').parent().addClass('container-responsive');
+        }
+
+        function confirmBeforeSubmit(formId, message) {
+            $('#' + formId).submit((event) => {
+                event.preventDefault();
+                swal({
+                    type: 'warning',
+                    title: 'Warning',
+                    text: message,
+                    confirmButtonText: 'Proceed',
+                    confirmButtonColor: 'teal',
+                    showCancelButton: true
+                }, (confirmed) => {
+                    if (!confirmed) {
+                        return;
+                    }
+                    $('#' + formId).unbind('submit').submit();
+                });
+            });
+        }
+
+        function collapseSideBar() {
+            const body = $('body');
+            if (!body.hasClass('sidebar-xs')) {
+                body.addClass('sidebar-xs');
+            }
+        }
+
+        function collapseSideBarForSomePages() {
+            const controllersList = [
+                'student-thesis-dissert',
+                'my-thesis-dissert',
+                'institution-process',
+                'thesis-dissert-stage-assessment',
+                'institution-process-actor',
+                'thesis-dissert-supervisor',
+                'thesis-dissert-panel',
+                'thesis-dissert-presentation',
+                'extension-of-study',
+                'my-profile'
+            ];
+            const currentController = `my-result`;
+            if (controllersList.includes(currentController)) {
+                collapseSideBar();
+            }
+        }
+
+        function animate(itemId, animationClass, time = 70) {
+            setTimeout(function () {
+                $('#' + itemId).addClass("animated " + animationClass).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+                    $(this).removeClass("animated " + animationClass);
+                });
+            }, time);
+        }
+
+        $(document).ready(() => {
+            $.ajaxSetup({
+                data: {"_csrf-frontend":"TZ32kmwv8r4W_8wIG3KVG0HpGu4_GKJJ_dxfCsIjbHkurrDWJWDL8UyUvV0rSqNfL4dDoFEolAqSuzFujnMaLg=="}            })
+            removeTopTableBorder();
+            handleTableResponsiveness();
+            collapseSideBarForSomePages();
+        });
+    </script>
+        
+<style>
+    .actor-option {
+        text-transform: none;
+        font-size: 90%;
+        cursor: pointer;
+        color: #9E9E9E
+    }
+
+    .actor-option-selected {
+        color: green;
+        border: 1px solid green;
+    }
+</style>
+
+<script>
+
+    function loadComments(remarkId, tableName, userId, studentId, processId) {
+        const commentsAreaId = `modalComments_${remarkId}_contents`;
+        const commentsArea = document.getElementById(commentsAreaId);
+        commentsArea.innerHTML = null;
+        commentsArea.style.padding = '12px';
+        const br = document.createElement('br');
+        const targetRemark = document.createElement('p');
+        targetRemark.innerHTML = 'Loading remarks...';
+        commentsArea.append(targetRemark);
+
+        const header = document.createElement('h6');
+        header.innerHTML = 'Comments from different Users';
+        header.classList.add('text-muted');
+        commentsArea.append(header);
+        const ul = document.createElement('ul');
+        ul.id = 'commentsList_' + remarkId;
+        ul.classList.add('summary-list');
+        ul.style.overflowY = 'scroll';
+
+        const loader = document.createElement('p');
+        loader.classList.add('text-center', 'text-teal');
+        loader.innerHTML = 'Loading...';
+
+        $.ajax({
+            url: `/index.php?r=student%2Fmy-result%2Fload-remark-comments`,
+            type: 'POST',
+            data: {
+                table_name: tableName,
+                remark_id: remarkId
+            },
+            beforeSend: () => {
+                commentsArea.append(loader);
+            },
+            success: (response) => {
+                commentsArea.removeChild(loader);
+                const responseBundle = JSON.parse(response);
+                if (responseBundle.type == 1) {
+                    const {comments, remark} = responseBundle;
+                    if (remark != undefined) {
+                        targetRemark.innerHTML = remark;
+                    }
+                    if (comments.length > 0) {
+                        ul.style.height = (window.innerHeight * 0.4) + 'px';
+                        for (const commentBundle of comments) {
+                            const {comment, user} = commentBundle;
+                            const li = document.createElement('li');
+                            li.id = 'remark_comment_li_' + comment.id;
+                            const img = document.createElement('img');
+                            img.src = user['profileImage'];
+                            img.classList.add('img', 'img-circle', 'remark-user-photo');
+                            img.style.height = '30px';
+                            img.style.width = '30px';
+                            li.append(img);
+                            const label = document.createElement('label');
+                            label.style.paddingLeft = '10px';
+                            label.innerHTML = ` ${user['fullName']} @ ${user['actorName']}`;
+                            label.classList.add('text-teal');
+                            label.style.display = 'inline-block';
+
+                            li.append(label);
+                            const pComments = document.createElement('p');
+                            pComments.id = 'remark_comments_' + comment.id;
+                            pComments.style.paddingLeft = '30px';
+                            pComments.innerHTML = comment.comments;
+                            li.append(pComments);
+
+                            const dateAndTime = document.createElement('small');
+                            dateAndTime.style.paddingLeft = '30px';
+                            dateAndTime.classList.add('text-muted');
+                            const iHistory = document.createElement('i');
+                            iHistory.classList.add('icon-history');
+                            dateAndTime.append(iHistory);
+                            dateAndTime.innerHTML = dateAndTime.innerHTML + `&nbsp;${comment['displayDate']}`;
+                            li.append(dateAndTime);
+
+                            li.innerHTML = li.innerHTML + '<br>';
+                            li.innerHTML = li.innerHTML + '<br>';
+
+                            const commentTrash = document.createElement('a');
+                            const iCommentTrash = document.createElement('i');
+                            iCommentTrash.classList.add('icon-trash-alt');
+                            commentTrash.append(iCommentTrash);
+                            commentTrash.classList.add('text-muted', 'text-small');
+                            commentTrash.innerHTML = commentTrash.innerHTML + ' Delete';
+                            //li.append(commentTrash);
+
+
+                            const space = document.createElement('span');
+                            space.innerHTML = '&nbsp;';
+                            li.append(space);
+                            li.append(space);
+                            li.append(space);
+
+                            const commentEdit = document.createElement('a');
+                            const iCommentEdit = document.createElement('i');
+                            iCommentEdit.classList.add('icon-pencil');
+                            commentEdit.append(iCommentEdit);
+                            commentEdit.classList.add('text-muted', 'text-small');
+                            commentEdit.innerHTML = commentEdit.innerHTML + 'Edit';
+                            //li.append(commentEdit);
+
+                            ul.append(li);
+
+                            if (comment.user_id == parseInt(`122223`)) {
+                                commentEdit.onclick = () => {
+                                    updateComments(comment);
+                                }
+                                commentTrash.onclick = () => {
+                                    deleteComments(comment.id, comment.remark_id);
+                                }
+                                commentTrash.onmouseover = () => {
+                                    commentTrash.classList.add('text-warning');
+                                }
+                                commentTrash.onmouseout = () => {
+                                    commentTrash.classList.remove('text-warning');
+                                }
+                            } else {
+                                clearEvents(commentEdit);
+                                clearEvents(commentTrash);
+                            }
+
+                        }
+                        ul.scrollTop = ul.scrollHeight;
+                    } else {
+                        const li = document.createElement('li');
+                        li.classList.add('no-comments');
+                        const iTrash = document.createElement('i');
+                        iTrash.classList.add('icon-trash');
+                        li.append(iTrash);
+                        li.innerHTML += ' No comments were found...';
+                        li.classList.add('text-muted', 'text-center');
+                        li.style.border = 'none';
+                        ul.append(li);
+                    }
+
+                    const lastLi = ul.lastChild;
+                    if (lastLi != undefined) {
+                        lastLi.style.border = 'none';
+                    }
+                }
+            },
+            error: (error) => {
+                commentsArea.removeChild(loader);
+            }
+        });
+
+
+        commentsArea.append(ul);
+
+        const commentsBox = document.createElement('textarea');
+        commentsBox.classList.add('form-control');
+        commentsBox.rows = '5';
+        commentsBox.id = 'commentsBox_' + remarkId;
+        commentsBox.placeholder = 'Please enter your comments here...';
+        commentsBox.style.padding = '8px';
+        commentsArea.append(commentsBox);
+
+
+        commentsArea.append(br);
+
+        const pTargetActors = document.createElement('p');
+        pTargetActors.classList.add('text-teal');
+        pTargetActors.innerHTML = 'Who should view your comments?<br>';
+        //commentsArea.append(pTargetActors);
+
+        const labelAllActors = document.createElement('label');
+        labelAllActors.classList.add('label', 'label-striped', 'label-rounded', 'actor-option');
+        labelAllActors.innerHTML = 'Everyone';
+        labelAllActors.onclick = () => {
+            selectActor(labelAllActors);
+        }
+        //commentsArea.append(labelAllActors);
+
+        const br2 = document.createElement('br');
+        commentsArea.append(br2);
+        //TODO: complete logic
+
+        const btnCancel = createButton('warning', 'icon-exit', 'Cancel');
+        btnCancel.setAttribute('data-dismiss', 'modal');
+        btnCancel.onclick = () => {
+            //window.location.reload();
+        }
+        commentsArea.append(btnCancel);
+
+        const btnReload = createButton('warning', 'icon-reload-alt', 'Cancel & Reload');
+        btnReload.setAttribute('data-dismiss', 'modal');
+        btnReload.onclick = () => {
+            window.location.reload();
+        }
+        commentsArea.append(btnReload);
+
+        const space = document.createElement('span');
+        space.innerHTML = '&nbsp';
+        commentsArea.append(space);
+
+        const btnSubmit = createButton('info', 'icon-forward', 'Send');
+        btnSubmit.classList.add('text-teal');
+        btnSubmit.onclick = () => {
+            submitComments(remarkId, tableName, userId, studentId, processId, $('#commentsBox_' + remarkId).val());
+        }
+        commentsArea.append(btnSubmit);
+
+        $(document).ready(() => {
+            ul.scrollTop = ul.scrollHeight;
+        });
+    }
+
+    function submitComments(remarkId, tableName, userId, studentId, processId, comments) {
+        if (comments.trim() == '') {
+            return;
+        }
+        const commentsList = document.getElementById('commentsList_' + remarkId);
+        const lastLi = commentsList.lastChild;
+        if (lastLi != undefined) {
+            lastLi.style.borderBottom = '1px solid #ddd';
+        }
+        const li = document.createElement('li');
+        const loader = document.createElement('small');
+        $.ajax({
+            url: `/index.php?r=student%2Fmy-result%2Fcreate-remark-comment`,
+            type: 'POST',
+            data: {
+                remark_id: remarkId,
+                comments,
+                table_name: tableName,
+                student_id: studentId,
+                process_id: processId
+            },
+            beforeSend: () => {
+                li.style.border = 'none';
+                commentsList.append(li);
+                loader.classList.add('text-teal');
+                loader.id = 'loader_' + remarkId;
+                loader.innerHTML = 'Submitting your comments...';
+                li.append(loader);
+                animate(loader.id, 'flash', 300);
+                commentsList.scrollTop = commentsList.scrollHeight;
+                $('#commentsBox_' + remarkId).val('');
+            },
+            success: (response) => {
+                li.removeChild(loader);
+                const responseBundle = JSON.parse(response);
+                const {user, comment} = responseBundle.payload;
+                if (responseBundle.type == 1) {
+                    li.id = 'remark_comment_li_' + comment.comment.id;
+                    $('.no-comments').hide();
+                    const img = document.createElement('img');
+                    img.src = user['profileImage'];
+                    img.classList.add('img', 'img-circle', 'remark-user-photo');
+                    img.style.height = '30px';
+                    img.style.width = '30px';
+                    li.append(img);
+                    const label = document.createElement('label');
+                    label.style.paddingLeft = '10px';
+                    label.innerHTML = ` ${user['fullName']} @ ${user['actorName']}`;
+                    label.classList.add('text-teal');
+                    li.append(label);
+                    const newComments = document.createElement('p');
+                    newComments.id = 'remark_comments_' + comment.comment.id;
+                    newComments.style.paddingLeft = '30px';
+                    newComments.innerHTML = comment.comment.comments;
+                    li.append(newComments);
+                    const dateAndTime = document.createElement('small');
+                    dateAndTime.style.paddingLeft = '30px';
+                    dateAndTime.classList.add('text-muted');
+                    const iHistory = document.createElement('i');
+                    iHistory.classList.add('icon-history');
+                    dateAndTime.append(iHistory);
+                    dateAndTime.innerHTML = dateAndTime.innerHTML + `&nbsp;${comment.displayDate}`;
+                    li.append(dateAndTime);
+                    li.innerHTML = li.innerHTML + '<br>';
+                    li.innerHTML = li.innerHTML + '<br>';
+
+                    const commentTrash = document.createElement('a');
+                    const iCommentTrash = document.createElement('i');
+                    iCommentTrash.classList.add('icon-trash-alt');
+                    commentTrash.append(iCommentTrash);
+                    commentTrash.classList.add('text-muted', 'text-small');
+                    commentTrash.innerHTML = commentTrash.innerHTML + 'Delete';
+                    //li.append(commentTrash);
+
+                    const space = document.createElement('span');
+                    space.innerHTML = '&nbsp;';
+                    li.append(space);
+                    li.append(space);
+                    li.append(space);
+
+                    const commentEdit = document.createElement('a');
+                    const iCommentEdit = document.createElement('i');
+                    iCommentEdit.classList.add('icon-pencil');
+                    commentEdit.append(iCommentEdit);
+                    commentEdit.classList.add('text-muted', 'text-small');
+                    commentEdit.innerHTML = commentEdit.innerHTML + 'Edit';
+                    //li.append(commentEdit);
+
+
+                    if (comment.comment.user_id == parseInt(`122223`)) {
+                        commentEdit.onclick = () => {
+                            updateComments(comment.comment);
+                        }
+                        commentTrash.onclick = () => {
+                            deleteComments(comment.comment.id, comment.comment.remark_id);
+                        }
+                        commentTrash.onmouseover = () => {
+                            commentTrash.classList.add('text-warning');
+                        }
+                        commentTrash.onmouseout = () => {
+                            commentTrash.classList.remove('text-warning');
+                        }
+                    } else {
+                        clearEvents(commentEdit);
+                        clearEvents(commentTrash);
+                    }
+
+                    $('#commentsBox_' + remarkId).focus();
+                    commentsList.scrollTop = commentsList.scrollHeight;
+
+                } else {
+                    li.removeChild(loader);
+                    li.innerHTML = responseBundle.message;
+                    li.classList.add('text-danger');
+                    commentsList.append(li);
+                    commentsList.scrollTop = commentsList.scrollHeight;
+                }
+            }
+        });
+
+    }
+
+    function updateComments(comment) {
+        swal({
+            title: "Update Comments",
+            text: "",
+            type: "input",
+            showCancelButton: true,
+            confirmButtonColor: "#2196F3",
+            confirmButtonText: 'Submit',
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "Write comments here",
+            inputValue: comment.comments
+        }, (inputValue) => {
+            if (!inputValue) {
+                return false;
+            }
+            if (inputValue === "") {
+                swal.showInputError("You need to write something!");
+                return false
+            }
+
+            $.ajax({
+                url: `/index.php?r=student%2Fmy-result%2Fupdate-remark-comment`,
+                type: 'POST',
+                data: {
+                    comment_id: comment.id,
+                    comments: inputValue
+                },
+                success: (response) => {
+                    const responseBundle = JSON.parse(response);
+                    if (responseBundle.type == 1) {
+                        $('#remark_comments_' + comment.id).html(responseBundle.comments);
+                        comment.comments = responseBundle.comments;
+                        swal({
+                            title: "Success",
+                            text: responseBundle.message,
+                            type: "success",
+                            confirmButtonColor: "#2196F3"
+                        });
+                    } else {
+                        swal({
+                            title: "Error!",
+                            text: responseBundle.message,
+                            type: "error",
+                            confirmButtonColor: "red"
+                        });
+                    }
+                }
+            });
+
+
+        });
+    }
+
+    function deleteComments(commentId, remarkId) {
+        console.log('works');
+        swal({
+            title: 'Warning',
+            type: 'warning',
+            text: 'Do you really want to delete this comment?',
+            confirmButtonText: 'Yes, Delete It',
+            showCancelButton: true,
+            cancelButtonText: 'No'
+        }, (confirmed) => {
+            if (confirmed) {
+                $.ajax({
+                    url: `/index.php?r=student%2Fmy-result%2Fdelete-remark-comment`,
+                    type: 'POST',
+                    data: {
+                        comment_id: commentId
+                    },
+                    success: (response) => {
+                        const responseBundle = JSON.parse(response);
+                        if (responseBundle.type == 1) {
+                            const commentsList = document.getElementById('commentsList_' + remarkId);
+                            const deletedLi = document.getElementById('remark_comment_li_' + commentId);
+                            commentsList.removeChild(deletedLi);
+                            const lastLi = document.getElementById('commentsList_' + remarkId).lastChild;
+                            if (lastLi != undefined) {
+                                lastLi.style.border = 'none';
+                            }
+                            swal({
+                                title: 'Success',
+                                type: 'success',
+                                text: responseBundle.message
+                            });
+                        } else {
+                            swal({
+                                title: 'Error',
+                                type: 'error',
+                                text: responseBundle.message
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    function createButton(type, icon, text) {
+        const btn = document.createElement('button');
+        const b = document.createElement('b');
+        const i = document.createElement('i');
+        i.classList.add(icon);
+        b.append(i);
+        btn.classList.add('btn', 'btn-sm', 'btn-labeled', 'btn-rounded');
+        btn.append(b);
+        btn.innerHTML = btn.innerHTML + text;
+        return btn;
+    }
+
+    function clearEvents(domElement) {
+        domElement.style.pointerEvents = 'none';
+        domElement.style.cursor = 'not-allowed';
+        domElement.classList.add('disabled');
+    }
+
+    function selectActor(domElement){
+        domElement.classList.toggle('actor-action-selected');
+        if (domElement.classList.contains('actor-action-selected')){
+            domElement.style.color = '#388E3C';
+            domElement.style.border = '1px solid #E8F5E9';
+            domElement.style.fontStyle = 'bold';
+        } else {
+            domElement.style.color = '#9E9E9E';
+            domElement.style.border = 'none';
+            domElement.style.fontStyle = 'normal';
+        }
+    }
+
+</script>    <style>
+    /* The toast - position it at the bottom and in the middle of the screen */
+    #toast {
+        visibility: hidden; /* Hidden by default. Visible on click */
+        min-width: 250px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 2px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 10000000; /* Add a z-index if needed */
+        left: 50%; /* Center the toast */
+        bottom:150px; /* 30px from the bottom */
+    }
+
+    /* Show the toast when clicking on a button (class added with JavaScript) */
+    #toast.show {
+        visibility: visible; /* Show the toast */
+        /* Add animation: Take 0.5 seconds to fade in and out the toast.
+        However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    /* Animations to fade the toast in and out */
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom:150px; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom:150px; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {bottom:150px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {bottom:150px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+</style>
+<div id="toast">Loading message..</div>
+<script>
+    function showToast(message,time = 3000) {
+
+        // Get the toast DIV
+        let toast = document.getElementById("toast");
+        toast.innerHTML = message;
+
+        // Add the "show" class to DIV
+        toast.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function () {
+            toast.className = toast.className.replace("show", "");
+        }, time);
+    }
+</script>
+
+    <!-- /footer -->
+    
+
+
+
+                <div id="help_center" class="modal fade">
+						<div class="modal-dialog modal-full">
+							<div class="modal-content">
+								<div class="modal-header bg-blue-700">
+									<button type="button" class="close" data-dismiss="modal"><span class="icon-times text-danger">×</span>Close</button>
+									<h6 class="modal-title"><i class="icon-lifebuoy"></i> ARIS 3.0 Help Center</h6>
+								</div>
+
+								<div class="modal-body">    <h1 class="text-center">The Help Center</h1>
+    <p>Welcome 2025-04-00850 | BUGUMYA, JOVIN CHACHA!</p>
+    <p>In case of anything please contact <span class="text-bold">ARIS 3.0</span> Support team via our
+        support line:
+    </p><ol type="1">
+        <li>0658 394 534</li>
+        <li>0734 313 265</li>
+        <li>0742 094 718</li>
+        <li>0692 512 396</li>
+        <li>0692 512 298</li>
+    </ol>
+    <p></p>
+    <!-- User Whom have Logged in -->
+    <ol type="1" style="font-family: 'Times New Roman';">
+
+        
+
+
+                    <!-- Student -->
+            <li>
+                <p style="text-align: justify;">What can I do with <span class="text-bold">ARIS 3.0</span> account?</p>
+                <p class="text-muted text-italic">As a student, you can do a vast of activities with your <span class="text-bold">ARIS 3.0</span> Account . Some of these activities include:
+                </p>
+                <ol type="a" class="text-italic">
+                    <li><p style="text-align: justify; font-style: normal;">You can determine on which semester and
+                            season you currently at,
+                            by clicking on the
+                            <b><i class="icon-user"></i>Dashboard</b> link on the sidebar menu</p>
+                    </li>
+                    <li><p style="text-align: justify; font-style: normal;">You can check, verify and even update some
+                            of your profile
+                            details, by clicking on the <b><i class="icon-profile"></i>Profile</b>
+                            link on the sidebar menu</p>
+                    </li>
+                    <li><p style="text-align: justify; font-style: normal;">You can perform various registration related
+                            activities such as;</p>
+                        <ol type="i">
+                            <li>Semester/Year Registration</li>
+                            <li>Courses registration</li>
+                            <li>Applying for a lost/damaged ID card</li>
+                            <li>Requesting for Programme transfer</li>
+                            <li>Apply for Carryover courses (for graduate students)</li>
+                        </ol>
+                        <p style="text-align: justify; font-style: normal;">by
+                            clicking on the <b><i class="icon-plus22"></i>Registration</b> link on the sidebar menu</p>
+                    </li>
+                    <li><p style="text-align: justify; font-style: normal;">You can perform various academics related
+                            activities such as;</p>
+                        <ol type="i">
+                            <li>Previewing Registered Courses (core, optional and carryover)</li>
+                            <li>Previewing All results</li>
+                            <li>Applying for the Statement of Results</li>
+                            <li>Applying for the Transcript</li>
+                            <li>Applying for the Progress Report</li>
+                            <li>Previewing your CA scores</li>
+                            <li>Applying for teaching practice station and subjects</li>
+                            <li>Applying for extension of Studies</li>
+                            <li>Postponement of Studies (POS)</li>
+                            <li>Applying for Postponement of Examinations (PEX)</li>
+                            <li>Applying for Appeal of Examination Results</li>
+                            <li>Online supervision process for thesis/dissertation</li>
+                        </ol>
+                        <p style="text-align: justify; font-style: normal;">by clicking on the <b><i class="icon-book"></i>Academics</b> link
+                            on the sidebar menu</p>
+                    </li>
+
+                    <li><p style="text-align: justify; font-style: normal;">You can perform various graduation related
+                            activities such as;</p>
+                        <ol type="i">
+                            <li>Previewing Graduation requirements</li>
+                            <li>Confirming graduation attendance</li>
+                            <li>performing online clearance</li>
+                        </ol>
+                        <p style="text-align: justify; font-style: normal;">by clicking on the <b><i class="icon-graduation"></i>Graduation</b>
+                            link on the sidebar menu</p>
+                    </li>
+
+                    <li><p style="text-align: justify; font-style: normal;">You can perform various Payments related
+                            activities such as;</p>
+                        <ol type="i">
+                            <li>Previewing Bills and respective status</li>
+                            <li>Making Payments</li>
+                            <li>Previewing Invoices</li>
+                            <li>Payments &amp; receipts</li>
+                            <li>Applying for payment Transfer &amp; Refund</li>
+                            <li>Previewing sponsorship information</li>
+                        </ol>
+
+                        <p style="text-align: justify; font-style: normal;">by clicking
+                            on the <b><i class="icon-cash3"></i>Payment</b>
+                            link on the sidebar menu</p>
+                    </li>
+
+                    <li><p style="text-align: justify; font-style: normal;">You can perform various Accommodation
+                            related activities such
+                            as;</p>
+                        <ol type="i">
+                            <li>Applying to be considered in next year's allocation</li>
+                            <li>Room shopping</li>
+                            <li>Previewing Your room Details and roommates</li>
+                            <li>Applying for room swapping</li>
+                            <li>Applying for short &amp; long vacation</li>
+                            <li>Checking your room clearance status</li>
+                            <li>Reporting an incident at you hostel</li>
+                        </ol>
+                        <p style="text-align: justify; font-style: normal;">by clicking on the <b><i class="icon-home9"></i>Accommodation</b>
+                            link on the sidebar menu</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p style="text-align: justify;">What is a <span class="text-bold">Control number</span> ?</p>
+                <p class="text-muted text-italic"></p>
+            </li>
+
+            <li>
+                <p style="text-align: justify;">What types of <span class="text-bold">Control numbers</span> are there?</p>
+                <p class="text-muted text-italic">There are three(3) main types of control numbers based on how you can make payment on them:</p>
+            <ol type="i">
+                <li><span class="text-bold">EXACT</span>: This control number allows you to pay the exact amount required, nothing more, nothing less</li>
+                <li><span class="text-bold">FULL</span>: This control number allows you to pay exact and above the required amount, nothing less</li>
+                <li><span class="text-bold">PARTIAL</span>: This control number allows you to pay <b>less</b>, <b>exact</b> or even <b>more</b> than the amount required</li>
+            </ol>
+            </li>
+
+
+            <li>
+                <p style="text-align: justify;">How can I get a <span class="text-bold">Control number</span> in <span class="text-bold">ARIS 3.0</span>?</p>
+                <p class="text-muted text-italic"> There are about twelve(12) ways through which <span class="text-bold">ARIS 3.0</span> can generate a control number. There are as follows:</p>
+                <ol type="i">
+                    <li>Manual Bill generated by Accounting due to various reasons</li>
+                    <li>Accommodation Room Shopping or Allocation</li>
+                    <li>Accommodation Fine and Penalties for tenants</li>
+                    <li>Registration Invoice items</li>
+                    <li>Transcript Request</li>
+                    <li>Statement Of Results Request</li>
+                    <li>Extension of studies Request</li>
+                    <li>Application for a lost ID Card and/or respective components</li>
+                    <li>Appeal for examination results</li>
+                    <li>Manual bill generated by student him/her self</li>
+                    <li>Manually bill generated due to several accommodation issues</li>
+                    <li>Enquiry for Graduation attires</li>
+                </ol>
+            </li>
+
+            <li>
+                <p style="text-align: justify;">How can I pay using a <span class="text-bold">Control number</span>?</p>
+                <p class="text-muted text-italic">There are several ways to pay using control number. The following are
+                    the most reliable and commonly used:</p>
+                <ol type="i">
+                    <li>Through Banks and their Respective "WAKALA"</li>
+                    <li>Through mobile money operators and their respective "WAKALA"</li>
+                </ol>
+            </li>
+
+            <li>
+                <p style="text-align: justify;">Can Someone else pay for me using my <span class="text-bold">Control number</span>?</p>
+                <p class="text-muted text-italic">Yes, you can give your control number to anyone and pay for you. All
+                    payments made on your control number will be reflected on your <span class="text-bold">ARIS 3.0</span> account under payment section as soon as it
+                    was made.</p>
+            </li>
+            <li>
+                <p style="text-align: justify;">How long does a <span class="text-bold">Control number</span> lasts before it expires?</p>
+                <p class="text-muted text-italic">
+                    <span class="text-bold">ARIS 3.0</span> issues a control number which lasts for <span class="text-bold">One(1) year</span> from the day it was generated before it expires.
+                </p>
+            </li>
+
+
+        
+        
+
+    </ol>
+
+
+</div>
+
+								<div class="modal-footer">
+									<button id="dismiss_btn_help_center" type="button" class="btn btn-danger" data-dismiss="modal"><span class="icon-times">×</span>Close</button>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+                        <!--/Footer-->
+
+
+
+
+
+
+        <script src="assets/js/jquery.js"></script>
+<script src="assets/js/yii.js"></script>
+<script src="assets/js/pace.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/blockui.min.js"></script>
+<script src="assets/js/uniform.min.js"></script>
+<script src="assets/js/session_timeout.min.js"></script>
+<script src="assets/js/d3.min.js"></script>
+<script src="assets/js/d3_tooltip.js"></script>
+<script src="assets/js/switchery.min.js"></script>
+<script src="assets/js/switch.min.js"></script>
+<script src="assets/js/bootstrap_multiselect.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/sweet_alert.min.js"></script>
+<script src="assets/js/datatables.min.js"></script>
+<script src="assets/js/anytime.min.js"></script>
+<script src="assets/js/daterangepicker.js"></script>
+<script src="assets/js/pnotify.min.js"></script>
+<script src="assets/js/prism.min.js"></script>
+<script src="assets/js/steps.min.js"></script>
+<script src="assets/js/jasny_bootstrap.min.js"></script>
+<script src="assets/js/validate.min.js"></script>
+<script src="assets/js/cookie.js"></script>
+<script src="assets/js/fileinput.min.js"></script>
+<script src="assets/js/jgrowl.min.js"></script>
+<script src="assets/js/picker.js"></script>
+<script src="assets/js/picker.date.js"></script>
+<script src="assets/js/picker.time.js"></script>
+<script src="assets/js/legacy.js"></script>
+<script src="assets/js/app.js"></script>    
+
+    <script src="assets/js/aris-vanity.js"></script>
+    <script src="assets/js/aris-input.js"></script>
+</body></html>

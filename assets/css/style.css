@@ -1,0 +1,94 @@
+h3.section-title {
+    font-weight: 900;
+    color: #26a69a;
+}
+
+.panel-remark {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.panel-remark-submit {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-top: 1px solid #ddd;
+}
+
+
+.panel-final {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.panel-final-body {
+    padding-left: 19px;
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+.panel-remark-submit-body {
+    padding-left: 19px
+}
+
+.inner-form{
+ padding-left: 60px
+}
+
+.panel-current-actions-body {
+    padding-left: 70px
+}
+
+.panel-remark .panel-footer {
+    padding: 10px 20px
+}
+
+.panel-remark-body, .panel-next-level .panel-body, .panel-final-body {
+    padding-left: 60px
+}
+
+.panel-remark > .panel-heading {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+
+.panel-next-level {
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-bottom: 0;
+}
+
+.panel-remark .panel-footer {
+    list-style: none;
+    margin-bottom: 0;
+    /* border: 1px solid #ddd; */
+    padding: 7px 0;
+    /* border-radius: 3px; */
+    padding-left: 60px;
+    background-color: #FFF;
+    border-top: 1px solid #FFF; 
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+
+div.grid-view table {
+    margin-bottom: 15px;
+}
+
+div.grid-view ul.pagination {
+    margin: 0 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
